@@ -1,20 +1,21 @@
 import { useState, useEffect } from "react";
-import Header from "../components/Header";
+import Header from "../components/Header"
+import Container from "../components/Container";
 
 export default function Hamburguer(){
     
     const[hamburguers, setHaburguers] = useState([]);
 
     const exemplos = [
-       {titulo:"Big Mac",
-        foto:"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kzXCTbnv/200/200/original?country=br",
+       {nome:"Big Mac",
+        imagem:"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kzXCTbnv/200/200/original?country=br",
         preco:"25.90",
         descricao:"gostoso"
        },
        
-       {titulo:"Cheddar",
-        foto:"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kzXv7hw4/200/200/original?country=br",
-        preco:"30,10",
+       {nome:"Cheddar",
+        imagem:"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kzXv7hw4/200/200/original?country=br",
+        preco:"30.10",
         descricao:"muito bom"
        }
     ]
@@ -35,22 +36,27 @@ export default function Hamburguer(){
             console.log(erro)});
     }), []);
     */
+
+    const display = {
+        display: "flex",
+        justifyContent:"space-evenly"
+    }
+
     return(
-        <>
+        <div>
             <Header></Header>
-            <div>
+            <div style={display}>
                 {
                 hamburguers.map((hamburguer)=>{
                     return(
-                    <div>
-                        <h1>{hamburguer.titulo}</h1>
-                        <img src={hamburguer.foto} alt="foto do hamburguer"/>
-                        <h3>{hamburguer.preco}</h3>
-                        <p>{hamburguer.descricao}</p>
-                    </div>
+                        <Container
+                        nome={hamburguer.nome} 
+                        imagem={hamburguer.imagem} 
+                        preco={hamburguer.preco} 
+                        descricao={hamburguer.descricao}/>
                     )
                 })}
             </div>
-        </>
+        </div>
     );
 }
