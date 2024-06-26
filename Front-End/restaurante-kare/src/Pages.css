@@ -1,0 +1,17 @@
+@font-face {
+    font-family: NGModern;
+    src: url(../public/PlaywriteNGModern-Regular.ttf);
+}
+
+.titulo{
+    font-family: NGModern;
+}
+
+.display{    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    background-color:#4F4F4F;
+    grid-auto-rows: auto;
+    grid-template-rows: auto;
+}

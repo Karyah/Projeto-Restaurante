@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import '../Fontes.css';
+import '../Pages.css';
 
 export default function Header(){
 
@@ -20,12 +20,11 @@ export default function Header(){
     const link = {
         color: "white",
         textDecoration:"none",
-        justifyContent:"inline-block",
-
+        justifyContent:"inline-block"
     }
 
     return(
-        <div style={cor}>
+        <header style={cor}>
 
             <div style={{color:"#B22222"}}>
                 <h1 className="titulo">Restaurante Karen</h1>
@@ -38,7 +37,7 @@ export default function Header(){
             </div>        
 
                
-        </div>
+        </header>
         
     );
 }

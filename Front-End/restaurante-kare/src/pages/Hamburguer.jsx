@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Header from "../components/Header"
 import Container from "../components/Container";
+import Cabecalho from "../components/Cabecalho";
+import '../Pages.css';
 
 export default function Hamburguer(){
     
@@ -10,14 +12,18 @@ export default function Hamburguer(){
        {nome:"Big Mac",
         imagem:"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kzXCTbnv/200/200/original?country=br",
         preco:"25.90",
-        descricao:"gostoso"
-       },
+        descricao:"gostoso"},
        
        {nome:"Cheddar",
         imagem:"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kzXv7hw4/200/200/original?country=br",
         preco:"30.10",
-        descricao:"muito bom"
-       }
+        descricao:"muito bom"},
+
+       {nome:"Cheddar",
+        imagem:"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kzXv7hw4/200/200/original?country=br",
+        preco:"30.10",
+        descricao:"muito bom"}
+       
     ]
 
     useEffect(()=>{
@@ -37,15 +43,12 @@ export default function Hamburguer(){
     }), []);
     */
 
-    const display = {
-        display: "flex",
-        justifyContent:"space-evenly"
-    }
+
 
     return(
-        <div>
+        <>
             <Header></Header>
-            <div style={display}>
+            <div className="display">
                 {
                 hamburguers.map((hamburguer)=>{
                     return(
@@ -57,6 +60,7 @@ export default function Hamburguer(){
                     )
                 })}
             </div>
-        </div>
+            <Cabecalho></Cabecalho>
+        </>
     );
 }
